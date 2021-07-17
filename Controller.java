@@ -141,3 +141,13 @@ public class Controller {
 
     }
 }
+   public void changesence(Scene scene)
+    {
+
+        window.setScene(scene);
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
