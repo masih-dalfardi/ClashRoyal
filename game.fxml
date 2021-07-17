@@ -1,0 +1,45 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" fx:id="pane3" alignment="TOP_CENTER" hgap="100" vgap="100">
+    <VBox alignment="CENTER" managed="true" >
+        <HBox alignment="CENTER" minHeight="2" ></HBox>
+            <Label fx:id="Timer" alignment="center" >3:00</Label>
+        <HBox alignment="CENTER" minHeight="493" ></HBox>
+        <HBox alignment="TOP_LEFT" minHeight="200" >
+            <HBox alignment="CENTER" minWidth="83" ></HBox>
+            <VBox alignment="TOP_LEFT" managed="true" minWidth="360" minHeight="200">
+
+            <HBox alignment="CENTER" minHeight="80" >
+
+                <Button fx:id="cart1" alignment="TOP_LEFT" minWidth="90" minHeight="80" ></Button>
+                <Button fx:id="cart2" alignment="TOP_LEFT" minWidth="90" minHeight="80"></Button>
+                <Button fx:id="cart3" alignment="TOP_LEFT" minWidth="90" minHeight="80"></Button>
+                <Button fx:id="cart4" alignment="TOP_LEFT" minWidth="90" minHeight="80"></Button>
+            </HBox>
+                <HBox alignment="CENTER" minHeight="3" />
+
+                <ProgressBar fx:id="gameprogress"  prefHeight="20.0" prefWidth="360.0" progress="0.2" />
+
+
+            </VBox>
+
+        </HBox>
+
+
+
+    </VBox>
+
+
+
+</GridPane>
