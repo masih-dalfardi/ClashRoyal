@@ -33,6 +33,18 @@
       </ImageView>
 
         </HBox>
+   <ProgressBar fx:id="progress" layoutX="31.0" layoutY="448.0" prefHeight="18.0" prefWidth="228.0" progress="0.0" />
+      <ImageView fx:id="bar" fitHeight="61.0" fitWidth="57.0" layoutX="28.0" layoutY="381.0" onMouseClicked="#barbar" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@barbarians.png" />
+         </image>
+      </ImageView>
+   <ProgressBar fx:id="progress" layoutX="31.0" layoutY="448.0" prefHeight="18.0" prefWidth="228.0" progress="0.0" />
+      <ImageView fx:id="bar" fitHeight="61.0" fitWidth="57.0" layoutX="28.0" layoutY="381.0" onMouseClicked="#barbar" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@barbarians.png" />
+         </image>
+      </ImageView>
 
 
 
