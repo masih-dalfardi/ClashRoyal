@@ -151,3 +151,20 @@ public class Controller {
         launch(args);
     }
 }
+    void Check_Theres(String data) throws IOException {
+     if(data!=null){//age meghdari tooye file ma voggod dasht varede shart beshe
+         String[] Splited=data.split("/");//tabe split vazife joda sazi ro dare...alan ma migim ke etelaate file ro ba ye slash( / ) jodasazi kon...(har karbar ba yek slash az ham joda shodand dar file...eteleate har karbar ba yek kama (,) az ham joda shode
+         for(int i=0;i<Splited.length;i++){
+            String[] splited_1=Splited[i].split(",");
+                if(splited_1[0].equals(username.getText()) && splited_1[1].equals(password.getText())){//too in shart barresi mikonim ke aya username va passi k karbar vared karde ba user va pass hayee ke too file vogood dare motabeghat dare ya na
+                    Model model=new Model();//yek shey az classe model misazim
+                    model.setUsername(username.getText());//username ros et mikonimm
+                    model.setPassword(password.getText());//password ros et mikonimm
+                    Main.pager.onnext("menu");//be menu miravim
+                }
+         }
+     }
+    }
+
+}
+
