@@ -1,6 +1,11 @@
 package sample;
 
 public class Controller {
+   @FXML
+    void onlogup(ActionEvent event) throws IOException {
+        //vaghti roo dokme logup mizanim in tabe ejra mishe
+        Main.pager.onnext("logup");//maro mibare be safhe logup
+    }
   /*  Cart click */
 
 
