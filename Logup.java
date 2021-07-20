@@ -20,19 +20,19 @@ public class Logup {
     @FXML
     void nlogup(ActionEvent event) throws IOException {
         //vaghti roo dokme logup click mishe
-        if(!username.getText().equals("") && !password.getText().equals("")){//barresi mikone bbine aya input haye ma khali has ya na
-        Write_To_File(username.getText(),password.getText());}else {////agar null bood input chap mikonim null
+        if(!username.getText().equals("") && !password.getText().equals("")){
+        Write_To_File(username.getText(),password.getText());}else {
             System.out.println("null");
         }
     }
 
     void Write_To_File(String username,String password) throws IOException {
-        //etelaate sabtenam ro vared file mikone in tabe
+       
         String s=username+","+password+"/";
         try {
-            Files.write(Paths.get("Users.txt"),s.getBytes(), StandardOpenOption.APPEND);//rooye file minevisim etelaat ro
+            Files.write(Paths.get("Users.txt"),s.getBytes(), StandardOpenOption.APPEND);
             Main.pager.onnext("sample");
-            //mirim be safhhe login
+           
         }catch (IOException e) {
             System.out.println(e.getMessage());
         }
