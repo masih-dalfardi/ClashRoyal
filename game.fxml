@@ -31,25 +31,64 @@
             <Image url="@dragon.png" />
          </image>
       </ImageView>
-
-        </HBox>
-   <ProgressBar fx:id="progress" layoutX="31.0" layoutY="448.0" prefHeight="18.0" prefWidth="228.0" progress="0.0" />
-      <ImageView fx:id="bar" fitHeight="61.0" fitWidth="57.0" layoutX="28.0" layoutY="381.0" onMouseClicked="#barbar" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="178.0" layoutY="381.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="9.0" style="-fx-background-color: #f147d8;" text="1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="7.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="gia" fitHeight="61.0" fitWidth="57.0" layoutX="128.0" layoutY="381.0" onMouseClicked="#giant" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@barbarians.png" />
+            <Image url="@giant.png" />
          </image>
       </ImageView>
-   <ProgressBar fx:id="progress" layoutX="31.0" layoutY="448.0" prefHeight="18.0" prefWidth="228.0" progress="0.0" />
-      <ImageView fx:id="bar" fitHeight="61.0" fitWidth="57.0" layoutX="28.0" layoutY="381.0" onMouseClicked="#barbar" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="128.0" layoutY="381.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="9.0" style="-fx-background-color: #f147d8;" text="1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="7.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="arch" fitHeight="61.0" fitWidth="57.0" layoutX="78.0" layoutY="381.0" onMouseClicked="#archer" opacity="0.5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@barbarians.png" />
+            <Image url="@archers.png" />
          </image>
       </ImageView>
-
-
-
-    </VBox>
-
-
-
-</GridPane>
+      <Button layoutX="78.0" layoutY="381.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="9.0" style="-fx-background-color: #f147d8;" text="1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="7.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="gh1" fitHeight="28.0" fitWidth="35.0" layoutX="39.0" layoutY="398.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="gh2" fitHeight="28.0" fitWidth="35.0" layoutX="93.0" layoutY="398.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="gh3" fitHeight="28.0" fitWidth="35.0" layoutX="139.0" layoutY="398.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lock.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="gh4" fitHeight="28.0" fitWidth="35.0" layoutX="189.0" layoutY="398.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lock.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="timer" layoutX="109.0" layoutY="70.0" text="03:00">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="228.0" layoutY="391.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="36.0">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lock.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

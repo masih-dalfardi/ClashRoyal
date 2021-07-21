@@ -25,6 +25,7 @@ onnext("sample");
 
     @Override
     public void onnext(String name) throws IOException {
+        //in interface ro dar har clasi farakhani konim ba gereftane yek esme class mara be oon class mebiare
         Parent root = FXMLLoader.load(getClass().getResource(name+".fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

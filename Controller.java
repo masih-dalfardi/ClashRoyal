@@ -1,175 +1,66 @@
 package sample;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Scanner;
+
 public class Controller {
-   @FXML
+
+    @FXML
+    private TextField username;
+
+    @FXML
+    private TextField password;
+
+    @FXML
+    void onlogin(ActionEvent event) throws IOException {
+        //vaghti rooye dokme login click mishe in tabe ejra mishe
+    String data=Read_From_File("Users.txt");//in tabe etelaat ro az file Users.txt migire
+    Check_Theres(data);//in tabe vazife ino dare k barrsi kone aya ba etelaati ke vared karde karbar fardi vogood dare too file ke etelaatesh hamin bashe?age ok bood varede barname va age okey nabood vared nenishe
+    }
+
+    @FXML
     void onlogup(ActionEvent event) throws IOException {
         //vaghti roo dokme logup mizanim in tabe ejra mishe
         Main.pager.onnext("logup");//maro mibare be safhe logup
     }
-  /*  Cart click */
 
-
-        Button cart1 = (Button) scene3.lookup("#cart1");
-        Button cart2 = (Button) scene3.lookup("#cart2");
-        Button cart3 = (Button) scene3.lookup("#cart3");
-        Button cart4 = (Button) scene3.lookup("#cart4");
-
-        ///////////////////////////////////////////////////////////////
-        cart1.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent actionEvent) {
-               double count =0.3;
-               if(gameprg.getProgress()>=0.3)
-               {
-                   double test = gameprg.getProgress();
-                   test-=0.3;
-                   gameprg.setProgress(test);
-               }
-            }
-        });
-
-        ////////////////////////////////////////////////////////////////
-
-        cart2.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                double count =0.2;
-                if(gameprg.getProgress()>=0.2)
-                {
-                    double test = gameprg.getProgress();
-                    test-=0.2;
-                    gameprg.setProgress(test);
-                }
-            }
-        });
-        ////////////////////////////////////////////////////////////
-
-        cart3.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                double count =0.4;
-                if(gameprg.getProgress()>=0.4)
-                {
-                    double test = gameprg.getProgress();
-                    test-=0.4;
-                    gameprg.setProgress(test);
-                }
-            }
-        });
-        ////////////////////////////////////////////////////////////
-        cart4.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                double count =0.5;
-                if(gameprg.getProgress()>=0.5)
-                {
-                    double test = gameprg.getProgress();
-                    test-=0.5;
-                    gameprg.setProgress(test);
-                }
-            }
-        });
-
-
-
-        window.show();
-
-
-
-
-
+    String Read_From_File(String filename){
+        String s="";
+    try {
+        File myObj = new File(filename);
+        Scanner myReader = new Scanner(myObj);
+        while (myReader.hasNextLine()) {
+            String data = myReader.nextLine();
+             s+=data;
+        }
+        myReader.close();
+    } catch (FileNotFoundException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
     }
-
-
-    public void setTimer() {
-        final int[] interval = {0};
-        final double[] show = {0.0};
-        Timer timer = new java.util.Timer();
-
-        timer.schedule(new TimerTask() {
-            public void run() {
-                Platform.runLater(new Runnable() {
-                    public void run() {
-                        if (interval[0] < 3) {
-                            show[0] = (double) interval[0] / 10;
-                            prgbr.setProgress(show[0]);
-                            interval[0]++;
-                        } else {
-                            changesence(scene2);
-                            timer.cancel();
-                        }
-                    }
-                });
-            }
-        }, 1000, 1000);
-
-    }
-
-
-    public void gameTimer() {
-        final int[] interval = {180};
-        final double[] show = {0.0};
-
-        gametimer.setText("::");
-        Timer timer = new java.util.Timer();
-
-        timer.schedule(new TimerTask() {
-            public void run() {
-                Platform.runLater(new Runnable() {
-                    public void run() {
-                        if (interval[0] > 0) {
-                            if(interval[0]%2==0)
-                            {
-                                if(gameprg.getProgress()!=1)
-                                {
-                                    double test = gameprg.getProgress();
-                                    test+=0.1;
-                                    gameprg.setProgress(test);
-                                }
-                            }
-
-                            String time = (interval[0]/60)+":"+(interval[0]%60);
-                            gametimer.setText(time);
-                            interval[0]--;
-                        } else {
-
-                            timer.cancel();
-                        }
-                    }
-                });
-            }
-        }, 1000, 1000);
-
-    }
+    return s;
 }
-   public void changesence(Scene scene)
-    {
 
-        window.setScene(scene);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
     void Check_Theres(String data) throws IOException {
-     if(data!=null){//age meghdari tooye file ma voggod dasht varede shart beshe
-         String[] Splited=data.split("/");//tabe split vazife joda sazi ro dare...alan ma migim ke etelaate file ro ba ye slash( / ) jodasazi kon...(har karbar ba yek slash az ham joda shodand dar file...eteleate har karbar ba yek kama (,) az ham joda shode
+     if(data!=null){
+         String[] Splited=data.split("/");
          for(int i=0;i<Splited.length;i++){
             String[] splited_1=Splited[i].split(",");
-                if(splited_1[0].equals(username.getText()) && splited_1[1].equals(password.getText())){//too in shart barresi mikonim ke aya username va passi k karbar vared karde ba user va pass hayee ke too file vogood dare motabeghat dare ya na
-                    Model model=new Model();//yek shey az classe model misazim
-                    model.setUsername(username.getText());//username ros et mikonimm
-                    model.setPassword(password.getText());//password ros et mikonimm
-                    Main.pager.onnext("menu");//be menu miravim
+                if(splited_1[0].equals(username.getText()) && splited_1[1].equals(password.getText())){
+                    Model model=new Model();
+                    model.setUsername(username.getText());
+                    model.setPassword(password.getText());
+                    Main.pager.onnext("menu");
                 }
          }
      }
     }
 
 }
-
